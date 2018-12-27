@@ -6,6 +6,7 @@
 /*  global $*/
 
 $("#shoot").click(function(){
+     var tie
      var computerChoice 
      var userChoice = $("#input").val();
      $("#userChoice").text(userChoice);
@@ -23,15 +24,15 @@ $("#shoot").click(function(){
           var winner="computer wins";
      }else if (userChoice==="paper" && computerChoice==="rock"){
           winner="user wins";
+     } else if (userChoice==="paper" && computerChoice==="paper"){
+          var tie ="computer and user lose";
+     }else if (userChoice==="rock" && computerChoice==="rock"){
+           tie ="computer and user lose";
+          
+     $("#result").text(winner)();
      }
-     
-     
-     
-     
-     
-     $("#result").text(winner);
- });
-
+       $("#result").text(tie)();
+});
 
 
 // DOCUMENT READY FUNCTION BELOW
